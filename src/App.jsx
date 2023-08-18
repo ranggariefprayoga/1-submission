@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
-import "./App.css";
+import "./styles/style.css";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage";
 import Navigation from "./component/Navigation";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
+import LeaderboardsPage from "./pages/LeaderboardsPage";
 import { asyncPreloadProcess } from "./states/isPreload/action";
 import { asyncUnsetAuthUser } from "./states/authUser/action";
 
@@ -53,6 +54,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/threads/:id" element={<DetailPage />} />
+            <Route path="/leaderboards" element={<LeaderboardsPage />} />
           </Routes>
         </main>
       </div>

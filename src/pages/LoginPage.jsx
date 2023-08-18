@@ -1,4 +1,3 @@
-import { LuAperture } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -16,16 +15,14 @@ function LoginPage() {
 
   return (
     <section className="login-page">
-      <header className="login-page_hero">
-        <h1>
-          <LuAperture />
-        </h1>
-      </header>
-      <article>
-        <h2>Halaman Login</h2>
+      <article className="login-page_input">
+        <h2>Login, Now!</h2>
         <LoginInput login={onLogin} />
         <p>
-          Don`t have an account? <Link to="/register">Register</Link>
+          Don`t have an account?{" "}
+          <Link to="/register" className="to-register">
+            Register
+          </Link>
         </p>
       </article>
     </section>

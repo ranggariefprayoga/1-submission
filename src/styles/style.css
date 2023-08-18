@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=Poppins:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Halaman Login dan Register */
+.login-page,
+.register-page {
+  background-image: url(../../public/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-input,
+.register-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.login-input .email,
+.login-input .password,
+.login-input .button,
+.register-input .name,
+.register-input .email,
+.register-input .password,
+.register-input .button {
+  height: 28px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.login-input .email,
+.login-input .password,
+.register-input .name,
+.register-input .email,
+.register-input .password {
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.login-input .email:focus,
+.login-input .password:focus,
+.register-input .name:focus,
+.register-input .email:focus,
+.register-input .password:focus {
+  outline: none;
+  border-color: #ff9900;
+  box-shadow: 0px 0px 6px rgba(255, 153, 0, 0.5);
+}
+
+.login-input .button:hover,
+.register-input .button:hover {
+  cursor: pointer;
+  border-color: #ff9900;
+  box-shadow: 0px 0px 6px rgba(255, 153, 0, 0.5);
+}
+
+.login-page_input,
+.register-page_input {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  padding: 30px;
+  text-align: center;
+}
+
+.login-page_input h2,
+.register-page_input h2 {
+  text-align: center;
+}
+
+.register-page_input p .to-login,
+.login-page_input p .to-register {
+  text-decoration: none;
+  color: pink;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.register-page_input p .to-login:hover,
+.login-page_input p .to-register:hover {
+  color: #ff9900;
+}
+
+/* Navigation */
+.navigation {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navigation-user {
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+}
+
+.navigation-user img {
+  border-radius: 50%;
+  margin-right: 5px;
+  height: 80%;
+}
+
+.navigation-user h2 {
+  font-size: 1.2rem;
+}
+
+.navigation-link {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.navigation-link nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 16px;
+}
+
+.navigation-link nav .link-home,
+.navigation-link nav .link-leaderboards {
+  text-decoration: none;
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.navigation-link nav .link-home::after,
+.navigation-link nav .link-leaderboards::after {
+  content: "";
+  position: absolute;
+  bottom: -3px; /* Sesuaikan jarak dari bawah teks */
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333; /* Ganti warna garis sesuai kebutuhan */
+  transform: scaleX(0); /* Awalnya garis tidak terlihat */
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+
+.navigation-link nav .link-home:hover,
+.navigation-link nav .link-leaderboards:hover {
+  color: #ff9900;
+}
+
+.navigation-link nav .link-home:hover::after,
+.navigation-link nav .link-leaderboards:hover::after {
+  transform: scaleX(1);
+}
+
+.navigation-link button {
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: auto auto;
+  height: 80%;
+}
+
+.navigation-link button:hover {
+  background-color: #e68a00;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Leaderboards */
+.leaderboards-page {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.leaderboards-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #fff; /* Warna latar belakang container */
+  border: 1px solid #ccc; /* Garis tepi container */
+  border-radius: 8px; /* Membuat sudut container melengkung */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan container */
+  padding: 20px; /* Jarak padding di dalam container */
+}
+
+.leaderboard-info {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.leaderboard-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.leaderboard-info_user .name {
+  font-weight: bold;
+  color: #333;
+}
+
+.leaderboard-score {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.leaderboard-score .score {
+  font-weight: bold;
+  color: #ff9900;
+}
+
+.leaderboard-info:hover {
+  background-color: #f5f5f5;
+}

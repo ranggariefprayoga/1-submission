@@ -1,4 +1,3 @@
-import { LuAppWindow } from "react-icons/lu";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import RegisterInput from "../component/RegisterInput";
@@ -15,17 +14,15 @@ function RegisterPage() {
   };
 
   return (
-    <section>
-      <header>
-        <h1>
-          <LuAppWindow />
-        </h1>
-      </header>
-      <article>
-        <h2>Buat Akun Kamu</h2>
+    <section className="register-page">
+      <article className="register-page_input">
+        <h2>Create your account!</h2>
         <RegisterInput register={onRegister} />
         <p>
-          Sudah Punya Akun? <Link to="/login">Login</Link>
+          Already have an account?{" "}
+          <Link to="/login" className="to-login">
+            Login
+          </Link>
         </p>
       </article>
     </section>

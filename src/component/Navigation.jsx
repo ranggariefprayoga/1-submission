@@ -5,16 +5,24 @@ function Navigation({ authUser, signOut }) {
   const { id, name, avatar } = authUser;
 
   return (
-    <div>
-      <img src={avatar} alt={id} title={name} />
-      <h2>Hai {name}</h2>
-      <nav>
-        <Link to="/threads">Home</Link>
-        <Link to="/leaderboards">Leaderboards</Link>
-      </nav>
-      <button type="button" onClick={signOut}>
-        Sign Out
-      </button>
+    <div className="navigation">
+      <div className="navigation-user">
+        <img src={avatar} alt={id} title={name} />
+        <h2>{name}</h2>
+      </div>
+      <div className="navigation-link">
+        <nav>
+          <Link to="/" className="link-home">
+            Home
+          </Link>
+          <Link to="/leaderboards" className="link-leaderboards">
+            Leaderboards
+          </Link>
+        </nav>
+        <button type="button" onClick={signOut}>
+          Sign Out
+        </button>
+      </div>
     </div>
   );
 }
