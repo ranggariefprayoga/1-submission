@@ -19,9 +19,7 @@ function DetailPage() {
   if (!threadDetail) {
     return null;
   }
-  // console.log("pantau 8", comments);
   const addComment = (content) => {
-    console.log("panmtau 1", content);
     dispatch(asyncAddComment({ id, content }));
   };
 

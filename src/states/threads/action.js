@@ -28,13 +28,10 @@ function asyncAddThread(title, body) {
   return async (dispatch) => {
     dispatch(showLoading());
     try {
-      console.log("pantau", { title, body });
       const thread = await api.createThread({ title, body });
-      console.log("pantau 3", thread);
       dispatch(addThreadActionCreator(thread));
     } catch (error) {
       alert(error.message);
-      console.log(error.message);
     }
     dispatch(hideLoading());
   };

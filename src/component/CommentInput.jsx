@@ -12,7 +12,6 @@ function CommentInput({ onAddComment }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(text);
     onAddComment(text);
   }
 

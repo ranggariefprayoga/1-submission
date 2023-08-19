@@ -15,8 +15,6 @@ function ThreadInput({ addThread }) {
     }
   }
 
-  console.log(title, text);
-
   function handleTitleChange({ target }) {
     if (target.value.length <= 15) {
       setTitle(target.value);

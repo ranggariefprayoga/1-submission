@@ -2,7 +2,6 @@
 import CommentItem from "./CommentItem";
 
 function CommentList({ comments }) {
-  console.log(comments);
   return (
     <>
       <div role="button" className="comment-list">

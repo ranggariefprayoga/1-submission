@@ -37,7 +37,6 @@ function ThreadItem({ thread }) {
           <p className="comment">
             <FaCommentDots /> : {thread.totalComments}
           </p>
-          {/* Element Like disini */}
         </section>
       </div>
     </div>
