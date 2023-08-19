@@ -2,31 +2,32 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncPopulateUsersAndThreads } from "../states/shared/action";
 import { asyncAddThread } from "../states/threads/action";
+import ThreadInput from "../component/ThreadInput";
+import ThreadList from "../component/ThreadsList";
 
 function HomePage() {
   const { users = [], threads = [], authUser } = useSelector((states) => states);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(asyncPopulateUsersAndThreads());
   }, [dispatch]);
 
-  const onAddThread = (title, body, category) => {
-    dispatch(asyncAddThread({ title, body, category }));
+  const onAddThread = (title, body) => {
+    dispatch(asyncAddThread(title, body));
   };
-
-  //Tambahin logic like
 
   const threadList = threads.map((thread) => ({
     ...thread,
-    // authUser: authUser.id,
+    user: users.find((user) => user.id === thread.ownerId),
+    authUser: authUser.id,
   }));
 
   return (
-    <div>
-      <h1>Ini Home Page</h1>
-    </div>
+    <section className="home-page">
+      <ThreadInput addThread={onAddThread} />
+      <ThreadList threads={threadList} />
+    </section>
   );
 }
 

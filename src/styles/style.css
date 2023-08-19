@@ -10,6 +10,15 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.app-container {
+  background-color: #f5f5f5;
+}
+
+.loading {
+  position: sticky;
+  top: 0;
+  z-index: 9999999999999999999;
+}
 /* Halaman Login dan Register */
 .login-page,
 .register-page {
@@ -38,10 +47,15 @@ body {
 .register-input .email,
 .register-input .password,
 .register-input .button {
-  height: 28px;
+  height: 44px;
   border-radius: 5px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border: none;
+}
+
+.login-input .button,
+.register-input .button {
+  background-color: #3498db;
 }
 
 .login-input .email,
@@ -69,13 +83,12 @@ body {
 .login-input .button:hover,
 .register-input .button:hover {
   cursor: pointer;
-  border-color: #ff9900;
-  box-shadow: 0px 0px 6px rgba(255, 153, 0, 0.5);
+  background-color: #2980b9;
 }
 
 .login-page_input,
 .register-page_input {
-  background-color: grey;
+  background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   width: 400px;
@@ -136,7 +149,8 @@ body {
 .navigation-link nav {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  margin-right: 12px;
   gap: 16px;
 }
 
@@ -202,11 +216,11 @@ body {
 .leaderboards-list {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #fff; /* Warna latar belakang container */
-  border: 1px solid #ccc; /* Garis tepi container */
-  border-radius: 8px; /* Membuat sudut container melengkung */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan container */
-  padding: 20px; /* Jarak padding di dalam container */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .leaderboard-info {
@@ -230,6 +244,11 @@ body {
   color: #333;
 }
 
+.leaderboard-info_user .email {
+  font-weight: normal;
+  color: #999;
+}
+
 .leaderboard-score {
   display: flex;
   align-items: center;
@@ -244,4 +263,342 @@ body {
 
 .leaderboard-info:hover {
   background-color: #f5f5f5;
+}
+
+/* Home Pages */
+.home-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input,
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.input-container input.title,
+.input-container input.body {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: border-color 0.2s ease-out;
+  background-color: white;
+}
+
+.input-container input.body {
+  height: 100px;
+}
+
+.input-container input:focus {
+  border-color: #3498db;
+}
+
+.thread-input__char-left {
+  font-size: 14px;
+  color: #555;
+}
+
+.thread-input button {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+  margin-bottom: 32px;
+}
+
+.thread-input button:hover {
+  background-color: #2980b9;
+}
+
+/* Thread-item */
+.threads-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(200, 200, 200, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
+  transition: transform 0.2s ease-out, color 0.2s ease-out;
+  cursor: pointer;
+}
+
+.thread-item {
+  border: none;
+  outline: none;
+  display: flex;
+  padding: 10px;
+  gap: 16px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+.thread-item:hover {
+  background-color: #f5f5f5;
+  color: #3498db;
+}
+
+.thread-item-photo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.thread-item-user {
+  flex: 1;
+}
+
+.thread-item-user header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.thread-item-user-info {
+  flex: 1;
+}
+
+.thread-item-user-info h3.judul {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.thread-item-user-info p.name {
+  font-size: 14px;
+  color: #666;
+}
+
+.thread-item-user-info p.email {
+  font-size: 12px;
+  color: #999;
+}
+
+.thread-item-user p.date {
+  font-size: 12px;
+  color: #999;
+}
+
+.thread-item-text p.text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.thread-item-information p.comment {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Halaman Detail Thread */
+.detail-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.detail-page-info {
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
+
+.thread-detail {
+  padding: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.thread-detail-user {
+  margin-bottom: 10px;
+}
+
+.judul {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.thread-detail-info {
+  display: flex;
+  align-items: center;
+}
+
+.thread-detail-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.thread-detail-info .name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.date {
+  font-size: 14px;
+  color: #999;
+}
+
+.comment-input {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  transition: transform 0.2s ease-in-out;
+}
+
+.comment-input h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comment-input form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-post {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment-post .body {
+  flex: 1;
+  border: none;
+  padding: 5px;
+  height: 44px;
+}
+
+.comment-input form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  height: 44px;
+}
+
+.comment-input form button:hover {
+  background-color: #0056b3;
+}
+
+.comment-list {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.comment-list h4 {
+  padding: 10px;
+}
+
+.comment-item {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.comment-item:hover {
+  background-color: #f5f5f5;
+}
+
+.comment-item-photo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-item-user {
+  flex: 1;
+}
+
+.comment-item-user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-item-user .name {
+  font-weight: bold;
+}
+
+.comment-item-user .date {
+  font-size: 12px;
+  color: #999;
+}
+
+.comment-item-text {
+  font-size: 14px;
+}
+
+.footer {
+  background-color: white;
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

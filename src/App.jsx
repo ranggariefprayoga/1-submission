@@ -7,6 +7,7 @@ import Loading from "./component/Loading";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import Navigation from "./component/Navigation";
+import Footer from "./component/Footer";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import LeaderboardsPage from "./pages/LeaderboardsPage";
@@ -57,6 +58,9 @@ function App() {
             <Route path="/leaderboards" element={<LeaderboardsPage />} />
           </Routes>
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </>
   );

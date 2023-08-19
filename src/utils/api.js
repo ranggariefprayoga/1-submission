@@ -103,7 +103,7 @@ const api = (() => {
     return user;
   }
 
-  async function createThread(title, body, category) {
+  async function createThread({ title, body }) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads`, {
       method: "POST",
       headers: {
@@ -112,12 +112,10 @@ const api = (() => {
       body: JSON.stringify({
         title,
         body,
-        category,
       }),
     });
-    const responseJson = response.json();
+    const responseJson = await response.json();
     const { status, message } = responseJson;
-
     if (status !== "success") {
       throw new Error(message);
     }
@@ -161,7 +159,7 @@ const api = (() => {
     return detailThread;
   }
 
-  async function createComment(id, content) {
+  async function createComment({ id, content }) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads/${id}/comments`, {
       method: "POST",
       headers: {
@@ -171,7 +169,7 @@ const api = (() => {
         content,
       }),
     });
-    const responseJson = response.json();
+    const responseJson = await response.json();
     const { status, message } = responseJson;
 
     if (status !== "success") {

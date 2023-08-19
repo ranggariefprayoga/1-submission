@@ -7,7 +7,7 @@ function LeaderboardsList({ leaderboards }) {
   return (
     <div className="leaderboards-list">
       {leaderboards.map((leaderboard) => (
-        <LeaderboardItem key={leaderboard.user.id} avatar={leaderboard.user.avatar} name={leaderboard.user.name} email={leaderboard.user.email} score={leaderboard.score} />
+        <LeaderboardItem key={leaderboard.user.id} leaderboard={leaderboard} />
       ))}
     </div>
   );

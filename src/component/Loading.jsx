@@ -1,9 +1,9 @@
-import { LoadingBar } from "react-redux-loading-bar";
+import LoadingBar from "react-redux-loading-bar";
 
 function Loading() {
   return (
     <div className="loading">
-      <LoadingBar />
+      <LoadingBar style={{ backgroundColor: "blue", height: "5px", zIndex: 999999 }} />
     </div>
   );
 }
