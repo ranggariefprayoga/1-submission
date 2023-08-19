@@ -1,6 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
+import parse from "html-react-parser";
 import { postedAt } from "../utils";
 
 function ThreadDetail({ detailThread }) {
@@ -11,7 +12,7 @@ function ThreadDetail({ detailThread }) {
           <h3 className="judul">{detailThread.title}</h3>
         </header>
         <article className="thread-detail-text">
-          <p className="text">{detailThread.body}</p>
+          <p className="text">{parse(detailThread.body)}</p>
         </article>
         <div className="thread-detail-info">
           <img src={detailThread.owner.avatar} alt={detailThread.owner.name} />

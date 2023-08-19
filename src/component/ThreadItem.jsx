@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
+import parse from "html-react-parser";
 import { FaCommentDots } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { postedAt } from "../utils";
@@ -35,7 +36,7 @@ function ThreadItem({ thread }) {
           <p className="date">{postedAt(thread.createdAt)}</p>
         </header>
         <article className="thread-item-text">
-          <p className="text">{thread.body}</p>
+          <p className="text">{parse(thread.body)}</p>
         </article>
         <section className="thread-item-information">
           <p className="comment">

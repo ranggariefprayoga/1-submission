@@ -1,6 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
+import parse from "html-react-parser";
 import { postedAt } from "../utils";
 
 function CommentItem({ comment }) {
@@ -17,7 +18,7 @@ function CommentItem({ comment }) {
           </div>
         </header>
         <article className="comment-item-text">
-          <p className="text">{comment.content}</p>
+          <p className="text">{parse(comment.content)}</p>
         </article>
       </div>
     </div>
