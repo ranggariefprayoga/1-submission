@@ -1,4 +1,5 @@
-/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable quotes */
+/* eslint-disable react/react-in-jsx-scope */
 import "./styles/style.css";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";

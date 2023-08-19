@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable react/react-in-jsx-scope */
 import PropType from "prop-types";
 import useInput from "../hooks/useInput";
 

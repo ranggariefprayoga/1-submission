@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 function postedAt(date) {
   const now = new Date();
   const posted = new Date(date);
@@ -19,7 +20,7 @@ function postedAt(date) {
   if (diffSeconds > 0) {
     return `${diffSeconds} seconds ago`;
   }
-  return "just now";
+  return 'just now';
 }
 
 export { postedAt };

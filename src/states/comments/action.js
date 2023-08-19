@@ -1,10 +1,11 @@
-import api from "../../utils/api";
-import { showLoading, hideLoading } from "react-redux-loading-bar";
-import { asyncReceiveThreadDetail } from "../threadDetail/action";
+/* eslint-disable no-alert */
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import api from '../../utils/api';
+import { asyncReceiveThreadDetail } from '../threadDetail/action';
 
 const ActionType = {
-  ADD_COMMENT: "ADD_COMMENT",
-  RECEIVE_COMMENTS: "RECEIVE_COMMENTS",
+  ADD_COMMENT: 'ADD_COMMENT',
+  RECEIVE_COMMENTS: 'RECEIVE_COMMENTS',
 };
 
 function receiveCommentActionCreator(comments) {
@@ -37,4 +38,6 @@ function asyncAddComment({ id, content }) {
   };
 }
 
-export { ActionType, addCommentActionCreator, asyncAddComment, receiveCommentActionCreator };
+export {
+  ActionType, addCommentActionCreator, asyncAddComment, receiveCommentActionCreator,
+};

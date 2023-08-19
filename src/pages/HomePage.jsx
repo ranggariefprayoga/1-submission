@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable react/react-in-jsx-scope */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncPopulateUsersAndThreads } from "../states/shared/action";

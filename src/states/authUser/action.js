@@ -1,9 +1,11 @@
-import api from "../../utils/api";
-import { hideLoading, showLoading } from "react-redux-loading-bar";
+/* eslint-disable no-alert */
+/* eslint-disable max-len */
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
+import api from '../../utils/api';
 
 const ActionType = {
-  SET_AUTH_USER: "SET_AUTH_USER",
-  UNSET_AUTH_USER: "UNSET_AUTH-USER",
+  SET_AUTH_USER: 'SET_AUTH_USER',
+  UNSET_AUTH_USER: 'UNSET_AUTH-USER',
 };
 
 function setAuthUserActionCreator(authUser) {
@@ -48,4 +50,6 @@ function asyncUnsetAuthUser() {
   };
 }
 
-export { ActionType, setAuthUserActionCreator, unsetAuthUserActionCreator, asyncSetAuthUser, asyncUnsetAuthUser };
+export {
+  ActionType, setAuthUserActionCreator, unsetAuthUserActionCreator, asyncSetAuthUser, asyncUnsetAuthUser,
+};

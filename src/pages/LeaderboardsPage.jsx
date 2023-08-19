@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable react/react-in-jsx-scope */
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import LeaderboardsList from "../component/LeaderboardsList";

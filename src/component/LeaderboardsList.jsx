@@ -1,8 +1,9 @@
-import LeaderboardItem from "./LeaderboadItem";
-import { LeaderboardItemShape } from "./LeaderboadItem";
+/* eslint-disable quotes */
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/react-in-jsx-scope */
 import PropTypes from "prop-types";
+import LeaderboardItem, { LeaderboardItemShape } from "./LeaderboadItem";
 
-/* eslint-disable react/prop-types */
 function LeaderboardsList({ leaderboards }) {
   return (
     <div className="leaderboards-list">

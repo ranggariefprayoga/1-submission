@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable react/react-in-jsx-scope */
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 

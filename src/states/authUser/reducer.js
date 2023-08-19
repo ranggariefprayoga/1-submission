@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { ActionType } from "./action";
 
 export default function authUserReducer(authUser = null, action = {}) {

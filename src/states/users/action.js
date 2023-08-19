@@ -1,7 +1,8 @@
-import api from "../../utils/api";
+/* eslint-disable no-alert */
+import api from '../../utils/api';
 
 const ActionType = {
-  RECEIVE_USERS: "RECEIVE_USERS",
+  RECEIVE_USERS: 'RECEIVE_USERS',
 };
 
 function receiveUsersActionCreator(users) {

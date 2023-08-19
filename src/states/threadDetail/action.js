@@ -1,6 +1,7 @@
-import api from "../../utils/api";
+/* eslint-disable quotes */
+/* eslint-disable no-alert */
 import { showLoading, hideLoading } from "react-redux-loading-bar";
-// import { receiveCommentActionCreator } from "../comment/action";
+import api from "../../utils/api";
 
 const ActionType = {
   RECEIVE_THREAD_DETAIL: "RECEIVE_THREAD_DETAIL",
@@ -17,29 +18,12 @@ function receiveThreadDetailActionCreator(threadDetail) {
   };
 }
 
-// function asyncUpdateThreadDetail(threadId) {
-//   return async (dispatch) => {
-//     dispatch(clearThreadDetailActionCreator());
-//     try {
-//       const threadDetail = await api.seeDetailThread(threadId);
-//       dispatch(receiveThreadDetailActionCreator(threadDetail));
-
-//       // dispatch(receiveCommentActionCreator(threadDetail.comments));
-//     } catch (error) {
-//       alert(error.message);
-//     }
-//   };
-// }
-
 function asyncReceiveThreadDetail(threadId) {
   return async (dispatch) => {
     dispatch(showLoading());
-    // dispatch(clearThreadDetailActionCreator());
     try {
       const threadDetail = await api.seeDetailThread(threadId);
       dispatch(receiveThreadDetailActionCreator(threadDetail));
-
-      // dispatch(receiveCommentActionCreator(threadDetail.comments));
     } catch (error) {
       alert(error.message);
     }

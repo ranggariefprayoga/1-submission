@@ -1,3 +1,6 @@
+/* eslint-disable quotes */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable consistent-return */
 import { ActionType } from "./action";
 
 export default function commentsReducer(comments = [], action = {}) {

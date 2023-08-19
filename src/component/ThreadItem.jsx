@@ -1,3 +1,7 @@
+/* eslint-disable quotes */
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import { FaCommentDots } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +39,7 @@ function ThreadItem({ thread }) {
         </article>
         <section className="thread-item-information">
           <p className="comment">
-            <FaCommentDots /> : {thread.totalComments}
+            <FaCommentDots /> :{thread.totalComments}
           </p>
         </section>
       </div>

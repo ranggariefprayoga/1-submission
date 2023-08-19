@@ -1,3 +1,7 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable import/extensions */
+/* eslint-disable react/react-in-jsx-scope */
 import { StrictMode } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";

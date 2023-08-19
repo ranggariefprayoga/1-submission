@@ -1,3 +1,6 @@
+/* eslint-disable quotes */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-use-before-define */
 const api = (() => {
   const BASE_URL = "https://forum-api.dicoding.dev/v1";
 

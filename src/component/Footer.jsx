@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 function Footer() {
   return (
     <footer className="footer">

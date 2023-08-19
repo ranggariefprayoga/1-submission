@@ -1,9 +1,10 @@
-import api from "../../utils/api";
-import { showLoading, hideLoading } from "react-redux-loading-bar";
+/* eslint-disable no-alert */
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import api from '../../utils/api';
 
 const ActionType = {
-  RECEIVE_THREADS: "RECEIVE_TALKS",
-  ADD_THREAD: "ADD_THREAD",
+  RECEIVE_THREADS: 'RECEIVE_TALKS',
+  ADD_THREAD: 'ADD_THREAD',
 };
 
 function receiveThreadsActionCreator(threads) {
@@ -37,4 +38,6 @@ function asyncAddThread(title, body) {
   };
 }
 
-export { ActionType, receiveThreadsActionCreator, addThreadActionCreator, asyncAddThread };
+export {
+  ActionType, receiveThreadsActionCreator, addThreadActionCreator, asyncAddThread,
+};

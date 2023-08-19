@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import ThreadItem from "./ThreadItem";
 
