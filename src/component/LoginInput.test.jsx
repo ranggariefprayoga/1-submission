@@ -17,12 +17,10 @@ import * as matchers from "@testing-library/jest-dom/matchers";
 import LoginInput from "./LoginInput";
 
 /**
- * skenario testing
- *
- * - LoginInput component
- *   - should handle username typing correctly
- *   - should handle password typing correctly
- *   - should call login function when login button is clicked
+Scenario unit test LoginInput component :
+ *  - should handle email typing correctly
+ *  - should handle password typing correctly
+ *  - should call login function when login button is clicked
  */
 
 expect.extend(matchers);
@@ -51,7 +49,6 @@ describe("LoginInput component", () => {
   });
 
   it("should call login function when login button is clicked", async () => {
-    // Arrange
     const mockLogin = vi.fn();
     render(<LoginInput login={mockLogin} />);
     const emailInput = await screen.getByPlaceholderText("Your Email");
@@ -59,9 +56,9 @@ describe("LoginInput component", () => {
     const passwordInput = await screen.getByPlaceholderText("Password");
     await userEvent.type(passwordInput, "passwordtest");
     const button = await screen.getByRole("button");
-    // Action
+
     await userEvent.click(button);
-    // Assert
+
     expect(mockLogin).toBeCalledWith({
       email: "emailtest",
       password: "passwordtest",

@@ -1,5 +1,5 @@
 /**
- * - Login spec
+ * - Scenario End to End test Login Spec
  *   - should display login page correctly
  *   - should display alert when email is empty
  *   - should display alert when password is empty

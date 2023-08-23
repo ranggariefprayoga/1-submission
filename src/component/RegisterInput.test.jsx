@@ -17,13 +17,11 @@ import * as matchers from "@testing-library/jest-dom/matchers";
 import RegisterInput from "./RegisterInput";
 
 /**
- * skenario testing
- *
- * - RegisterInput component
- *   - should handle name typing correctly
- *   - should handle email typing correctly
- *   - should handle password typing correctly
- *   - should call register function when register button is clicked
+  Scenario unit test RegisterInput component :
+ * - should handle name typing correctly
+ * - should handle email typing correctly
+ * - should handle password typing correctly
+ * - should call register function when register button is clicked
  */
 
 expect.extend(matchers);
@@ -61,7 +59,6 @@ describe("RegisterInput component", () => {
   });
 
   it("should call register function when register button is clicked", async () => {
-    // Arrange
     const mockLogin = vi.fn();
     render(<RegisterInput register={mockLogin} />);
     const nameInput = await screen.getByPlaceholderText("Name");
@@ -71,9 +68,9 @@ describe("RegisterInput component", () => {
     const passwordInput = await screen.getByPlaceholderText("Password");
     await userEvent.type(passwordInput, "passwordtest");
     const button = await screen.getByRole("button");
-    // Action
+
     await userEvent.click(button);
-    // Assert
+
     expect(mockLogin).toBeCalledWith({
       name: "nametest",
       email: "emailtest",

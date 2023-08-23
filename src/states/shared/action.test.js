@@ -61,8 +61,7 @@ const fakeUsersResponse = [
 
 const fakeErrorResponse = new Error("Ups, something went wrong");
 
-//  skenario testing
-//   - asyncPopulateUsersAndTalks thunk
+//  Scenario unit test asyncPopulateUsersAndTalks thunk :
 //   - should dispatch action correctly when data fetching success
 //   - should dispatch action and call alert correctly when data fetching failed
 

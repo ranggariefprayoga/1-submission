@@ -36,8 +36,8 @@ const fakeLeaderboardsResponse = [
 
 const fakeErrorResponse = new Error("Ups, something went wrong ");
 
-//  skenario testing
-//   - asyncPopulateLeaderboards thunk
+//
+//  Scenario unit test asyncPopulateLeaderboards thunk :
 //   - should dispatch action correctly when data fetching success
 //   - should dispatch action and call alert correctly when data fetching failed
 
