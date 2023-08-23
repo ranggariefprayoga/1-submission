@@ -1,9 +1,10 @@
+/* eslint-disable quotes */
 /* eslint-disable no-alert */
-import { showLoading, hideLoading } from 'react-redux-loading-bar';
-import api from '../../utils/api';
+import { showLoading, hideLoading } from "react-redux-loading-bar";
+import api from "../../utils/api";
 
 const ActionType = {
-  RECEIVE_LEADERBOARDS: 'RECEIVE_LEADERBOARDS',
+  RECEIVE_LEADERBOARDS: "RECEIVE_LEADERBOARDS",
 };
 
 function receiveLeaderboardsActionCreator(leaderboards) {

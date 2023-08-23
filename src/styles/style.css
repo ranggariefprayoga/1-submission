@@ -121,6 +121,7 @@ body {
   background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
@@ -266,6 +267,10 @@ body {
 }
 
 /* Home Pages */
+/* main {
+  padding-top: 70px;
+} */
+
 .home-page {
   display: grid;
   grid-template-columns: 1fr;

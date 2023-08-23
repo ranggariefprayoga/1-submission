@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable quotes */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable jsx-a11y/interactive-supports-focus */

@@ -1,4 +1,5 @@
-import { ActionType } from './action';
+/* eslint-disable quotes */
+import { ActionType } from "./action";
 
 export default function threadsReducer(threads = [], action = {}) {
   switch (action.type) {
