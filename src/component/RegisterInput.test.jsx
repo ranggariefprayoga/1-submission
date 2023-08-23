@@ -14,27 +14,37 @@ import { describe, expect, it, afterEach, vi } from "vitest";
 import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import * as matchers from "@testing-library/jest-dom/matchers";
-import LoginInput from "./LoginInput";
+import RegisterInput from "./RegisterInput";
 
 /**
  * skenario testing
  *
- * - LoginInput component
- *   - should handle username typing correctly
+ * - RegisterInput component
+ *   - should handle name typing correctly
+ *   - should handle email typing correctly
  *   - should handle password typing correctly
- *   - should call login function when login button is clicked
+ *   - should call register function when register button is clicked
  */
 
 expect.extend(matchers);
 
-describe("LoginInput component", () => {
+describe("RegisterInput component", () => {
   afterEach(() => {
     cleanup();
   });
 
+  it("should handle name typing correctly", async () => {
+    render(<RegisterInput register={() => {}} />);
+    const nameInput = await screen.getByPlaceholderText("Name");
+
+    await userEvent.type(nameInput, "nametest");
+
+    expect(nameInput).toHaveValue("nametest");
+  });
+
   it("should handle email typing correctly", async () => {
-    render(<LoginInput login={() => {}} />);
-    const emailInput = await screen.getByPlaceholderText("Your Email");
+    render(<RegisterInput register={() => {}} />);
+    const emailInput = await screen.getByPlaceholderText("Email");
 
     await userEvent.type(emailInput, "emailtest");
 
@@ -42,7 +52,7 @@ describe("LoginInput component", () => {
   });
 
   it("should handle password typing correctly", async () => {
-    render(<LoginInput login={() => {}} />);
+    render(<RegisterInput register={() => {}} />);
     const passwordInput = await screen.getByPlaceholderText("Password");
 
     await userEvent.type(passwordInput, "passwordtest");
@@ -50,11 +60,13 @@ describe("LoginInput component", () => {
     expect(passwordInput).toHaveValue("passwordtest");
   });
 
-  it("should call login function when login button is clicked", async () => {
+  it("should call register function when register button is clicked", async () => {
     // Arrange
     const mockLogin = vi.fn();
-    render(<LoginInput login={mockLogin} />);
-    const emailInput = await screen.getByPlaceholderText("Your Email");
+    render(<RegisterInput register={mockLogin} />);
+    const nameInput = await screen.getByPlaceholderText("Name");
+    await userEvent.type(nameInput, "nametest");
+    const emailInput = await screen.getByPlaceholderText("Email");
     await userEvent.type(emailInput, "emailtest");
     const passwordInput = await screen.getByPlaceholderText("Password");
     await userEvent.type(passwordInput, "passwordtest");
@@ -63,6 +75,7 @@ describe("LoginInput component", () => {
     await userEvent.click(button);
     // Assert
     expect(mockLogin).toBeCalledWith({
+      name: "nametest",
       email: "emailtest",
       password: "passwordtest",
     });
