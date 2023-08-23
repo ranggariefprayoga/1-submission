@@ -3,11 +3,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { asyncReceiveThreadDetail } from "../states/threadDetail/action";
+import { asyncReceiveThreadDetail, asyncAddComment } from "../states/threadDetail/action";
 import ThreadDetail from "../component/ThreadDetail";
 import CommentInput from "../component/CommentInput";
 import CommentList from "../component/CommentList";
-import { asyncAddComment } from "../states/comments/action";
+// import { asyncAddComment } from "../states/comments/action";
 
 function DetailPage() {
   const { id } = useParams();

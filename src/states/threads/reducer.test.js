@@ -7,8 +7,14 @@
 import { describe, it, expect } from "vitest";
 import threadsReducer from "./reducer";
 
+// test scenario for threadsReducer
+
+// - threadsReducer function
+// - should return the initial state when given by unknown action
+// - should return the threads when given by RECEIVE_THREADS action
+// - should return the threads with the new thread when given by ADD_THREAD action
+
 describe("threadsReducer function", () => {
-  // - should return the initial state when given by unknown action
   it("should return the initial state when given by unknown action", () => {
     const initialState = [];
     const action = { type: "UNKNOWN" };
@@ -17,7 +23,7 @@ describe("threadsReducer function", () => {
 
     expect(nextState).toEqual(initialState);
   });
-  // - should return the threads when given by RECEIVE_THREADS action
+
   it("should return the threads when given by RECEIVE_THREADS action", () => {
     const initialState = [];
     const action = {
@@ -55,7 +61,6 @@ describe("threadsReducer function", () => {
     expect(nextState).toEqual(action.payload.threads);
   });
 
-  // - should return the threads with the new thread when given by ADD_THREAD action
   it("should return the threads with the new thread when given by ADD_THREAD action", () => {
     const initialState = [
       {
