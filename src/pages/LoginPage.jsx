@@ -19,7 +19,7 @@ function LoginPage() {
   return (
     <section className="login-page">
       <article className="login-page_input">
-        <h2>Please login !</h2>
+        <h2>Welcome, Please Login !</h2>
         <LoginInput login={onLogin} />
         <p>
           Don`t have an account?{" "}
