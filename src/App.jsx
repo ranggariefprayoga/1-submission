@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable react/react-in-jsx-scope */
 import "./styles/style.css";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Loading from "./component/Loading";
@@ -35,12 +35,10 @@ function App() {
     return (
       <>
         <Loading />
-        <main>
-          <Routes>
-            <Route path="/*" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/*" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
       </>
     );
   }
@@ -52,13 +50,11 @@ function App() {
         <header>
           <Navigation authUser={authUser} signOut={onSignOut} />
         </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/threads/:id" element={<DetailPage />} />
-            <Route path="/leaderboards" element={<LeaderboardsPage />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/threads/:id" element={<DetailPage />} />
+          <Route path="/leaderboards" element={<LeaderboardsPage />} />
+        </Routes>
         <footer>
           <Footer />
         </footer>

@@ -18,7 +18,7 @@ function ThreadInput({ addThread }) {
   }
 
   function handleTitleChange({ target }) {
-    if (target.value.length <= 15) {
+    if (target.value.length <= 50) {
       setTitle(target.value);
     }
   }
@@ -35,10 +35,14 @@ function ThreadInput({ addThread }) {
         <div className="input-container">
           <label htmlFor="title">Title</label>
           <input className="title" type="text" placeholder="Thread Title" value={title} onChange={handleTitleChange} />
+          <p className="thread-input__title">
+            <strong>{title.length}</strong>
+            /50
+          </p>
           <label htmlFor="body">Body</label>
-          <input className="body" type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
+          <textarea className="body" type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
         </div>
-        <p className="thread-input__char-left">
+        <p className="thread-input__body">
           <strong>{text.length}</strong>
           /320
         </p>

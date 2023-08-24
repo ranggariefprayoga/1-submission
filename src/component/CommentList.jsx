@@ -6,7 +6,7 @@ import CommentItem from "./CommentItem";
 function CommentList({ comments }) {
   return (
     <div role="button" className="comment-list">
-      <h4>Komentar</h4>
+      <h4>Komentar ({comments.length})</h4>
       {comments.map((comment) => (
         <CommentItem key={comment.id} comment={comment} />
       ))}

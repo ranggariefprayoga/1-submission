@@ -1,6 +1,6 @@
 /* eslint-disable quotes */
 /* eslint-disable react/react-in-jsx-scope */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncPopulateUsersAndThreads } from "../states/shared/action";
 import { asyncAddThread } from "../states/threads/action";
@@ -27,6 +27,7 @@ function HomePage() {
 
   return (
     <section className="home-page">
+      <h1 className="title">let's start talking</h1>
       <ThreadInput addThread={onAddThread} />
       <ThreadList threads={threadList} />
     </section>

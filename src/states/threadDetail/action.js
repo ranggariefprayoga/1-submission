@@ -9,6 +9,9 @@ const ActionType = {
   RECEIVE_THREAD_DETAIL: "RECEIVE_THREAD_DETAIL",
   UPDATE_THREAD_DETAIL: "UPDATE_THREAD_DETAIL",
   ADD_COMMENT: "ADD_COMMENT",
+  UP_VOTE: "UP_VOTE",
+  DOWN_VOTE: "DOWN_VOTE",
+  NEUTRALIZE_VOTE: "NEUTRALIZE_VOTE",
 };
 
 function receiveThreadDetailActionCreator(threadDetail) {
@@ -25,6 +28,36 @@ function addCommentActionCreator(comment) {
     type: ActionType.ADD_COMMENT,
     payload: {
       comment,
+    },
+  };
+}
+
+function upVoteCommentActionCreator(commentId, userId) {
+  return {
+    type: ActionType.UP_VOTE,
+    payload: {
+      commentId,
+      userId,
+    },
+  };
+}
+
+function downVoteCommentActionCreator(commentId, userId) {
+  return {
+    type: ActionType.DOWN_VOTE,
+    payload: {
+      commentId,
+      userId,
+    },
+  };
+}
+
+function neutralizeVoteCommentActionCreator(commentId, userId) {
+  return {
+    type: ActionType.NEUTRALIZE_VOTE,
+    payload: {
+      commentId,
+      userId,
     },
   };
 }
@@ -55,4 +88,41 @@ function asyncAddComment({ id, content }) {
   };
 }
 
-export { ActionType, receiveThreadDetailActionCreator, addCommentActionCreator, asyncReceiveThreadDetail, asyncAddComment };
+function asyncNeutralizeVoteComment(threadId, commentId) {
+  return async (dispatch, getState) => {
+    const { authUser } = getState();
+    dispatch(neutralizeVoteCommentActionCreator(commentId, authUser.id));
+    try {
+      await api.neutralizeVoteComment(threadId, commentId);
+    } catch (error) {
+      console.log(error.message);
+      dispatch(neutralizeVoteCommentActionCreator(commentId, authUser.id));
+    }
+  };
+}
+
+function asyncUpVoteComment(threadId, commentId) {
+  return async (dispatch, getState) => {
+    const { authUser } = getState();
+    dispatch(upVoteCommentActionCreator(commentId, authUser.id));
+    try {
+      await api.upVoteComment(threadId, commentId);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+}
+
+function asyncDownVoteComment(threadId, commentId) {
+  return async (dispatch, getState) => {
+    const { authUser } = getState();
+    dispatch(downVoteCommentActionCreator(commentId, authUser.id));
+    try {
+      await api.downVoteComment(threadId, commentId);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+}
+
+export { ActionType, receiveThreadDetailActionCreator, addCommentActionCreator, asyncReceiveThreadDetail, asyncAddComment, asyncNeutralizeVoteComment, asyncDownVoteComment, asyncUpVoteComment };
