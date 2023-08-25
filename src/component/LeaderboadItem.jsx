@@ -1,9 +1,11 @@
+/* eslint-disable object-curly-newline */
+
 /* eslint-disable quotes */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import { IoBarChart } from "react-icons/io5";
-import { LeaderboardsItemContainer, LeaderboardItemImage, LeaderboardUserInfoContainer, LeaderboardUserName, LeaderboardUserEmail, LeaderboardScoreContainer, LeaderboardScore } from "./styled/leaderboardItem";
+import { LeaderboardsItemContainer, LeaderboardItemImage, LeaderboardUserInfoContainer, LeaderboardUserName, LeaderboardUserEmail, LeaderboardScoreContainer, LeaderboardScore } from "./styled/LeaderboardItem";
 
 function LeaderboardItem({ leaderboard }) {
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable quotes */
 import { ActionType } from "./action";
 
@@ -10,7 +11,6 @@ export default function threadsReducer(threads = [], action = {}) {
     case ActionType.UP_VOTE:
       return threads.map((thread) => {
         if (thread.id === action.payload.threadId) {
-          console.log(thread);
           return {
             ...thread,
             upVotesBy: thread.upVotesBy.includes(action.payload.userId) ? thread.upVotesBy.filter((id) => id !== action.payload.userId) : thread.upVotesBy.concat([action.payload.userId]),

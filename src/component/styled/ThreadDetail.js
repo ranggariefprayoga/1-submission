@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ThreadDetailContainer = styled.div`
   padding: 10px;
@@ -43,4 +43,6 @@ const PostedAt = styled.p`
   color: #999;
 `;
 
-export { ThreadDetailContainer, Title, Content, UserInfoContainer, Image, Name, PostedAt, SenderInfo };
+export {
+  ThreadDetailContainer, Title, Content, UserInfoContainer, Image, Name, PostedAt, SenderInfo,
+};

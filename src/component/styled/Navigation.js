@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { devices } from "./breakpoints";
+import styled from 'styled-components';
+import { devices } from './breakpoints';
 
 const NavigationContainer = styled.div`
   display: grid;
@@ -122,6 +122,8 @@ const SignOutButton = styled.button`
   }
 `;
 
-const style = { display: "block", height: "44px", width: "44px" };
+const style = { display: 'block', height: '44px', width: '44px' };
 
-export { NavigationContainer, UserInfo, Image, Name, LinkContainer, IconToggle, style, SignOutButton };
+export {
+  NavigationContainer, UserInfo, Image, Name, LinkContainer, IconToggle, style, SignOutButton,
+};

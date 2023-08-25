@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable import/prefer-default-export */
 const breakpoints = {
   sm: "526px",
   md: "626px",

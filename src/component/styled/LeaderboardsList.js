@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const LeaderboardsListContainer = styled.div`
   margin-top: 60px;

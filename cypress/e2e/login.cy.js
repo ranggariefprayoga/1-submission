@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable quotes */
 /**
  * - Scenario End to End test Login Spec
  *   - should display login page correctly
@@ -26,7 +28,7 @@ describe("Login spec", () => {
       .click();
 
     cy.on("window:alert", (str) => {
-      expect(str).to.equal(`"email" is not allowed to be empty`);
+      expect(str).to.equal('"email" is not allowed to be empty');
     });
   });
 
@@ -38,7 +40,7 @@ describe("Login spec", () => {
       .click();
 
     cy.on("window:alert", (str) => {
-      expect(str).to.equal(`"password" is not allowed to be empty`);
+      expect(str).to.equal('"password" is not allowed to be empty');
     });
   });
 

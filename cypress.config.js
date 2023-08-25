@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable quotes */
 import { defineConfig } from "cypress";
 
 export default defineConfig({
@@ -6,4 +9,5 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
+  video: false,
 });

@@ -1,3 +1,6 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable quotes */
 /* eslint-disable react/react-in-jsx-scope */
 import PropTypes from "prop-types";
@@ -55,7 +58,9 @@ function Navigation({ authUser, signOut }) {
         <Name>{name}</Name>
       </UserInfo>
       <LinkContainer ref={wrapperRef}>
-        <IconToggle onClick={toggleMenu}>{<FiMenu style={style} />}</IconToggle>
+        <IconToggle onClick={toggleMenu}>
+          <FiMenu style={style} />
+        </IconToggle>
         <nav className="menu-items">
           <div onClick={handleHome} className="link-home">
             Home

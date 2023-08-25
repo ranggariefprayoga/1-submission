@@ -1,5 +1,6 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable no-alert */
+/* eslint-disable no-console */
+/* eslint-disable quotes */
+
 import { showLoading, hideLoading } from "react-redux-loading-bar";
 import api from "../../utils/api";
 
@@ -66,7 +67,7 @@ function asyncAddThread(title, body) {
       const thread = await api.createThread({ title, body });
       dispatch(addThreadActionCreator(thread));
     } catch (error) {
-      alert(error.message);
+      console.log(error.message);
     }
     dispatch(hideLoading());
   };

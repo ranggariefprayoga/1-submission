@@ -7,7 +7,11 @@ import { CommentListContainer, CommentListTitle } from "./styled/CommentList";
 function CommentList({ comments }) {
   return (
     <CommentListContainer role="button">
-      <CommentListTitle>Komentar ({comments.length})</CommentListTitle>
+      <CommentListTitle>
+        Komentar (
+        {comments.length}
+        )
+      </CommentListTitle>
       {comments.map((comment) => (
         <CommentItem key={comment.id} comment={comment} />
       ))}

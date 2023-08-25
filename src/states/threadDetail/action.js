@@ -1,7 +1,8 @@
+/* eslint-disable no-console */
 /* eslint-disable max-len */
 /* eslint-disable object-curly-newline */
 /* eslint-disable quotes */
-/* eslint-disable no-alert */
+
 import { showLoading, hideLoading } from "react-redux-loading-bar";
 import api from "../../utils/api";
 
@@ -69,7 +70,7 @@ function asyncReceiveThreadDetail(threadId) {
       const threadDetail = await api.seeDetailThread(threadId);
       dispatch(receiveThreadDetailActionCreator(threadDetail));
     } catch (error) {
-      alert(error.message);
+      console.log(error.message);
     }
     dispatch(hideLoading());
   };
@@ -82,7 +83,7 @@ function asyncAddComment({ id, content }) {
       await api.createComment({ id, content });
       dispatch(asyncReceiveThreadDetail(id));
     } catch (error) {
-      alert(error.message);
+      console.log(error.message);
     }
     dispatch(hideLoading());
   };

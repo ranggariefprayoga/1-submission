@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const RegisterPageContainer = styled.section`
   background-image: url(../../public/background.jpg);
@@ -30,14 +30,16 @@ const Question = styled.p`
 
 const styles = {
   menuStyle: {
-    textDecoration: "none",
-    color: "pink",
-    fontWeight: "bold",
-    transition: "color 0.3s",
-    "&:hover": {
-      color: "#ff9900",
+    textDecoration: 'none',
+    color: 'pink',
+    fontWeight: 'bold',
+    transition: 'color 0.3s',
+    '&:hover': {
+      color: '#ff9900',
     },
   },
 };
 
-export { RegisterPageContainer, RegisterInputContainer, Title, styles, Question };
+export {
+  RegisterPageContainer, RegisterInputContainer, Title, styles, Question,
+};

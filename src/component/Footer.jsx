@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { FooterContainer, FooterContent } from "./styled/Footer";
+import { FooterContainer, FooterContent } from './styled/Footer';
 
 function Footer() {
   return (

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const LoginInputContainer = styled.form`
   display: flex;
@@ -53,4 +53,6 @@ const LoginInputButton = styled.button`
   }
 `;
 
-export { LoginInputContainer, LoginInputEmail, LoginInputPassword, LoginInputButton };
+export {
+  LoginInputContainer, LoginInputEmail, LoginInputPassword, LoginInputButton,
+};

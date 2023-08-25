@@ -1,4 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable object-curly-newline */
+/* eslint-disable react/jsx-no-bind */
+
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable quotes */
 import { useState } from "react";

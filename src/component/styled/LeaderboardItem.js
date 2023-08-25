@@ -1,3 +1,6 @@
+/* eslint-disable quotes */
+/* eslint-disable object-curly-newline */
+/* eslint-disable max-len */
 import styled from "styled-components";
 import { devices } from "./breakpoints";
 

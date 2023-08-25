@@ -2,7 +2,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 import PropType from "prop-types";
 import useInput from "../hooks/useInput";
-import { LoginInputContainer, LoginInputEmail, LoginInputPassword, LoginInputButton } from "./styled/LoginInput";
+import {
+  LoginInputContainer, LoginInputEmail, LoginInputPassword, LoginInputButton,
+} from "./styled/LoginInput";
 
 function LoginInput({ login }) {
   const [email, onEmailChange] = useInput("");

@@ -1,8 +1,10 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable comma-dangle */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
 /* eslint-disable quotes */
 /* eslint-disable linebreak-style */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-unused-vars */
+
 /* eslint-disable linebreak-style */
 import { describe, it, expect } from "vitest";
 import threadsReducer from "./reducer";
@@ -130,7 +132,6 @@ describe("threadsReducer function", () => {
     expect(nextState).toEqual(
       initialState.map((thread) => {
         if (thread.id === action.payload.threadId) {
-          console.log(thread);
           return {
             ...thread,
             upVotesBy: thread.upVotesBy.includes(action.payload.userId) ? thread.upVotesBy.filter((id) => id !== action.payload.userId) : thread.upVotesBy.concat([action.payload.userId]),

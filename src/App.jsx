@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable react/react-in-jsx-scope */
 import "./styles/style.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Loading from "./component/Loading";

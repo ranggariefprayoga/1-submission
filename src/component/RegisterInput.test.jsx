@@ -1,13 +1,13 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable object-curly-newline */
 /* eslint-disable linebreak-style */
-/* eslint-disable import/no-unresolved */
+
 /* eslint-disable linebreak-style */
-/* eslint-disable import/no-extraneous-dependencies */
+
 /* eslint-disable linebreak-style */
 /* eslint-disable quotes */
 /* eslint-disable linebreak-style */
-/* eslint-disable eol-last */
+
 /* eslint-disable linebreak-style */
 import React from "react";
 import { describe, expect, it, afterEach, vi } from "vitest";

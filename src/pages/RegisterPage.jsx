@@ -5,7 +5,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import RegisterInput from "../component/RegisterInput";
 import { asyncRegisterUser } from "../states/users/action";
-import { RegisterInputContainer, RegisterPageContainer, Title, styles, Question } from "./styled/RegisterPage";
+import {
+  RegisterInputContainer, RegisterPageContainer, Title, styles, Question,
+} from "./styled/RegisterPage";
 
 function RegisterPage() {
   const navigate = useNavigate();

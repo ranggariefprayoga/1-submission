@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2021: true, node: true, cypress: true },
+  env: { browser: true, node: true },
   extends: ["eslint:recommended", "airbnb", "plugin:react-hooks/recommended"],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const CommentInputContainer = styled.div`
   padding: 20px;
@@ -42,4 +42,6 @@ const InputButton = styled.button`
   }
 `;
 
-export { CommentInputContainer, InputTitle, FormContainer, InputContent, InputButton };
+export {
+  CommentInputContainer, InputTitle, FormContainer, InputContent, InputButton,
+};

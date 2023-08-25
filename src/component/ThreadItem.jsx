@@ -1,16 +1,17 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable object-curly-newline */
+/* eslint-disable max-len */
 /* eslint-disable quotes */
 /* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable jsx-a11y/interactive-supports-focus */
+
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import parse from "html-react-parser";
 import { MdComment } from "react-icons/md";
 import { AiFillLike, AiFillDislike, AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { asyncNeutralizeVoteThread, asyncUpVoteThread, asyncDownVoteThread } from "../states/threads/action";
 import { postedAt } from "../utils";
-import { useDispatch, useSelector } from "react-redux";
 import { ThreadItemContainer, ThreadItemImage, UserContainer, UserHeader, UserInfo, Title, Name, Email, Date, Content, InformationContainer, TotalComments, VoteContainer, UpVote, DownVote } from "./styled/ThreadItem";
 
 function ThreadItem({ thread }) {

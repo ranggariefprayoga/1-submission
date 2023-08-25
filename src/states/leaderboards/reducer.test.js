@@ -1,8 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable quotes */
 /* eslint-disable linebreak-style */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-unused-vars */
+
 /* eslint-disable linebreak-style */
 
 import { describe, it, expect } from "vitest";

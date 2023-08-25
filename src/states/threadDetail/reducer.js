@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable quotes */
 import { ActionType } from "./action";
 

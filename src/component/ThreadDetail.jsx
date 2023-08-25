@@ -1,10 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable quotes */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import parse from "html-react-parser";
 import { postedAt } from "../utils";
-import { ThreadDetailContainer, Title, Content, UserInfoContainer, Image, Name, PostedAt, SenderInfo } from "./styled/ThreadDetail";
+import {
+  ThreadDetailContainer, Title, Content, UserInfoContainer, Image, Name, PostedAt, SenderInfo,
+} from "./styled/ThreadDetail";
 
 function ThreadDetail({ detailThread }) {
   return (

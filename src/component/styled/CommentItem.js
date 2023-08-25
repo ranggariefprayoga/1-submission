@@ -1,4 +1,5 @@
-import styled from "styled-components";
+/* eslint-disable max-len */
+import styled from 'styled-components';
 
 const CommentItemContainer = styled.div`
   display: flex;
@@ -60,4 +61,6 @@ const DownVote = styled.p`
   cursor: pointer;
 `;
 
-export { CommentItemContainer, CommentItemImage, CommentItemUserContainer, UserContainer, UserName, PostedAt, CommentContent, VoteContainer, UpVote, DownVote };
+export {
+  CommentItemContainer, CommentItemImage, CommentItemUserContainer, UserContainer, UserName, PostedAt, CommentContent, VoteContainer, UpVote, DownVote,
+};

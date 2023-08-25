@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable max-len */
 import styled from "styled-components";
 
 const RegisterInputContainer = styled.form`
@@ -69,4 +71,6 @@ const RegisterInputButton = styled.button`
   }
 `;
 
-export { RegisterInputContainer, RegisterInputName, RegisterInputEmail, RegisterInputPassword, RegisterInputButton };
+export {
+  RegisterInputContainer, RegisterInputName, RegisterInputEmail, RegisterInputPassword, RegisterInputButton,
+};

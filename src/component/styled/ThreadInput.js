@@ -1,3 +1,6 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable quotes */
+/* eslint-disable max-len */
 import styled from "styled-components";
 
 const InputContainer = styled.div`

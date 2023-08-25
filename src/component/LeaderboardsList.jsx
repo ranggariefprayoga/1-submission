@@ -3,7 +3,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import PropTypes from "prop-types";
 import LeaderboardItem, { LeaderboardItemShape } from "./LeaderboadItem";
-import LeaderboardsListContainer from "./styled/leaderboardsList";
+import LeaderboardsListContainer from "./styled/LeaderboardsList";
 
 function LeaderboardsList({ leaderboards }) {
   return (
