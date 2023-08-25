@@ -3,14 +3,15 @@
 /* eslint-disable react/react-in-jsx-scope */
 import PropTypes from "prop-types";
 import LeaderboardItem, { LeaderboardItemShape } from "./LeaderboadItem";
+import LeaderboardsListContainer from "./styled/leaderboardsList";
 
 function LeaderboardsList({ leaderboards }) {
   return (
-    <div className="leaderboards-list">
+    <LeaderboardsListContainer>
       {leaderboards.map((leaderboard) => (
         <LeaderboardItem key={leaderboard.user.id} leaderboard={leaderboard} />
       ))}
-    </div>
+    </LeaderboardsListContainer>
   );
 }
 

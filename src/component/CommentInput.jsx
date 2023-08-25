@@ -2,6 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { CommentInputContainer, InputTitle, FormContainer, InputContent, InputButton } from "./styled/CommentInput";
 
 function CommentInput({ onAddComment }) {
   const [text, setText] = useState("");
@@ -18,17 +19,15 @@ function CommentInput({ onAddComment }) {
   }
 
   return (
-    <div className="comment-input">
-      <h2>Tambahkan Komentar</h2>
-      <form>
-        <div className="comment-post">
-          <input className="body" type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
-        </div>
-        <button type="submit" onClick={handleSubmit}>
+    <CommentInputContainer>
+      <InputTitle>Tambahkan Komentar</InputTitle>
+      <FormContainer>
+        <InputContent type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
+        <InputButton type="submit" onClick={handleSubmit}>
           Tambahkan Komentar
-        </button>
-      </form>
-    </div>
+        </InputButton>
+      </FormContainer>
+    </CommentInputContainer>
   );
 }
 

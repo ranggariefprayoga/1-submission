@@ -7,7 +7,7 @@ import { asyncReceiveThreadDetail, asyncAddComment } from "../states/threadDetai
 import ThreadDetail from "../component/ThreadDetail";
 import CommentInput from "../component/CommentInput";
 import CommentList from "../component/CommentList";
-// import { asyncAddComment } from "../states/comments/action";
+import { DetailPageContainer, DetailContent } from "./styled/DetailPage";
 
 function DetailPage() {
   const { id } = useParams();
@@ -26,15 +26,13 @@ function DetailPage() {
   };
 
   return (
-    <section className="detail-page">
-      <div className="detail-page-info">
+    <DetailPageContainer>
+      <DetailContent>
         <ThreadDetail detailThread={threadDetail} />
-      </div>
-      <div className="detail-page-comments">
-        <CommentInput detailThread={threadDetail} onAddComment={addComment} />
-        <CommentList comments={threadDetail.comments} />
-      </div>
-    </section>
+      </DetailContent>
+      <CommentInput detailThread={threadDetail} onAddComment={addComment} />
+      <CommentList comments={threadDetail.comments} />
+    </DetailPageContainer>
   );
 }
 

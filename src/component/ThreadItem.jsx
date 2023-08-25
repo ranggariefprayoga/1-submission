@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { asyncNeutralizeVoteThread, asyncUpVoteThread, asyncDownVoteThread } from "../states/threads/action";
 import { postedAt } from "../utils";
 import { useDispatch, useSelector } from "react-redux";
+import { ThreadItemContainer, ThreadItemImage, UserContainer, UserHeader, UserInfo, Title, Name, Email, Date, Content, InformationContainer, TotalComments, VoteContainer, UpVote, DownVote } from "./styled/ThreadItem";
 
 function ThreadItem({ thread }) {
   const { authUser } = useSelector((states) => states);
@@ -46,37 +47,34 @@ function ThreadItem({ thread }) {
   };
 
   return (
-    <div role="button" className="thread-item" onClick={onThreadClick} onKeyDown={onThreadPress}>
-      <div className="thread-item-photo">
-        <img src={thread.user.avatar} alt={thread.user.name} />
-      </div>
-      <div className="thread-item-user">
-        <header>
-          <div className="thread-item-user-info">
-            <h3 className="judul">{thread.title}</h3>
-            <p className="name">{thread.user.name}</p>
-            <p className="email">{thread.user.email}</p>
-          </div>
-          <p className="date">{postedAt(thread.createdAt)}</p>
-        </header>
-        <article className="thread-item-text">
-          <p className="text">{parse(thread.body)}</p>
-        </article>
-        <section className="thread-item-information">
-          <p className="comment">
+    <ThreadItemContainer onClick={onThreadClick} onKeyDown={onThreadPress}>
+      <ThreadItemImage src={thread.user.avatar} alt={thread.user.name} />
+      <UserContainer>
+        <UserHeader>
+          <UserInfo>
+            <Title>{thread.title}</Title>
+            <Name>{thread.user.name}</Name>
+            <Email>{thread.user.email}</Email>
+          </UserInfo>
+          <Date>{postedAt(thread.createdAt)}</Date>
+        </UserHeader>
+        <Content>{parse(thread.body)}</Content>
+        <InformationContainer>
+          <TotalComments>
+            {" "}
             <MdComment /> <strong>{thread.totalComments}</strong>
-          </p>
-          <div className="likes">
-            <p className="upVote" onClick={handleUpVoteThread}>
+          </TotalComments>
+          <VoteContainer>
+            <UpVote onClick={handleUpVoteThread}>
               {thread.upVotesBy.includes(authUser.id) ? <AiFillLike /> : <AiOutlineLike />} <strong>{thread.upVotesBy.length}</strong>
-            </p>
-            <p className="downVote" onClick={handleDownVoteThread}>
+            </UpVote>
+            <DownVote onClick={handleDownVoteThread}>
               {thread.downVotesBy.includes(authUser.id) ? <AiFillDislike /> : <AiOutlineDislike />} <strong>{thread.downVotesBy.length}</strong>
-            </p>
-          </div>
-        </section>
-      </div>
-    </div>
+            </DownVote>
+          </VoteContainer>
+        </InformationContainer>
+      </UserContainer>
+    </ThreadItemContainer>
   );
 }
 

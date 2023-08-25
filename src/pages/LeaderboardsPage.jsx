@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import LeaderboardsList from "../component/LeaderboardsList";
+import LeaderboardsPageContainer from "./styled/LeaderboardsPage";
 import { asyncPopulateLeaderboards } from "../states/leaderboards/action";
 
 function LeaderboardsPage() {
@@ -14,9 +15,9 @@ function LeaderboardsPage() {
   }, [dispatch]);
 
   return (
-    <section className="leaderboards-page">
+    <LeaderboardsPageContainer>
       <LeaderboardsList leaderboards={leaderboards} />
-    </section>
+    </LeaderboardsPageContainer>
   );
 }
 

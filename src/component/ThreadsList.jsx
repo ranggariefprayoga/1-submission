@@ -2,14 +2,15 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import ThreadItem from "./ThreadItem";
+import ThreadsListContainer from "./styled/ThreadsList";
 
 function ThreadList({ threads }) {
   return (
-    <div className="threads-list">
+    <ThreadsListContainer>
       {threads.map((thread) => (
         <ThreadItem key={thread.id} thread={thread} />
       ))}
-    </div>
+    </ThreadsListContainer>
   );
 }
 

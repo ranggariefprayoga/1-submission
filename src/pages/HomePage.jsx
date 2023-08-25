@@ -6,6 +6,7 @@ import { asyncPopulateUsersAndThreads } from "../states/shared/action";
 import { asyncAddThread } from "../states/threads/action";
 import ThreadInput from "../component/ThreadInput";
 import ThreadList from "../component/ThreadsList";
+import { HomePageContainer, HomeTitle } from "./styled/HomePage";
 
 function HomePage() {
   const { users = [], threads = [], authUser } = useSelector((states) => states);
@@ -26,11 +27,11 @@ function HomePage() {
   }));
 
   return (
-    <section className="home-page">
-      <h1 className="title">let's start talking</h1>
+    <HomePageContainer>
+      <HomeTitle>let's start talking</HomeTitle>
       <ThreadInput addThread={onAddThread} />
       <ThreadList threads={threadList} />
-    </section>
+    </HomePageContainer>
   );
 }
 

@@ -2,15 +2,16 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import CommentItem from "./CommentItem";
+import { CommentListContainer, CommentListTitle } from "./styled/CommentList";
 
 function CommentList({ comments }) {
   return (
-    <div role="button" className="comment-list">
-      <h4>Komentar ({comments.length})</h4>
+    <CommentListContainer role="button">
+      <CommentListTitle>Komentar ({comments.length})</CommentListTitle>
       {comments.map((comment) => (
         <CommentItem key={comment.id} comment={comment} />
       ))}
-    </div>
+    </CommentListContainer>
   );
 }
 

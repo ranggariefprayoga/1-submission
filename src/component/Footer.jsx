@@ -1,11 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
+import { FooterContainer, FooterContent } from "./styled/Footer";
+
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <p>&copy; Rangga`s Website. All rights reserved.</p>
-      </div>
-    </footer>
+    <FooterContainer>
+      <FooterContent>&copy; Rangga`s Website. All rights reserved.</FooterContent>
+    </FooterContainer>
   );
 }
 

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
+import { NavigationContainer, UserInfo, Image, Name, LinkContainer, IconToggle, style, SignOutButton } from "./styled/Navigation";
 
 function useOutsideAlerter(ref) {
   useEffect(() => {
@@ -47,15 +48,14 @@ function Navigation({ authUser, signOut }) {
   };
 
   return (
-    <div className="navigation">
-      <div className="navigation-user">
-        <img src={avatar} alt={id} title={name} />
-        <h2>{name}</h2>
-      </div>
-      <div className={`navigation-link`} ref={wrapperRef}>
-        <div className="menu-toggle" onClick={toggleMenu}>
-          {<FiMenu className="icon" />}
-        </div>
+    <NavigationContainer>
+      {" "}
+      <UserInfo>
+        <Image src={avatar} alt={id} title={name} />
+        <Name>{name}</Name>
+      </UserInfo>
+      <LinkContainer ref={wrapperRef}>
+        <IconToggle onClick={toggleMenu}>{<FiMenu style={style} />}</IconToggle>
         <nav className="menu-items">
           <div onClick={handleHome} className="link-home">
             Home
@@ -64,11 +64,11 @@ function Navigation({ authUser, signOut }) {
             Leaderboards
           </div>
         </nav>
-        <button className="menu-button" type="button" onClick={signOut}>
+        <SignOutButton type="button" onClick={signOut}>
           Sign Out
-        </button>
-      </div>
-    </div>
+        </SignOutButton>
+      </LinkContainer>
+    </NavigationContainer>
   );
 }
 

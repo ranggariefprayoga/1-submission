@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import RegisterInput from "../component/RegisterInput";
 import { asyncRegisterUser } from "../states/users/action";
+import { RegisterInputContainer, RegisterPageContainer, Title, styles, Question } from "./styled/RegisterPage";
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -17,18 +18,20 @@ function RegisterPage() {
   };
 
   return (
-    <section className="register-page">
-      <article className="register-page_input">
-        <h2>Create your account!</h2>
+    <RegisterPageContainer>
+      <RegisterInputContainer>
+        <Title>
+          <h2>Create your account!</h2>
+        </Title>
         <RegisterInput register={onRegister} />
-        <p>
+        <Question>
           Already have an account?{" "}
-          <Link to="/login" className="to-login">
+          <Link to="/login" style={styles.menuStyle}>
             Login
           </Link>
-        </p>
-      </article>
-    </section>
+        </Question>
+      </RegisterInputContainer>
+    </RegisterPageContainer>
   );
 }
 

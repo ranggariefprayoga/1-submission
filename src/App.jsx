@@ -12,6 +12,7 @@ import Footer from "./component/Footer";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import LeaderboardsPage from "./pages/LeaderboardsPage";
+import Container from "./pages/styled/Container";
 import { asyncPreloadProcess } from "./states/isPreload/action";
 import { asyncUnsetAuthUser } from "./states/authUser/action";
 
@@ -46,19 +47,15 @@ function App() {
   return (
     <>
       <Loading />
-      <div className="app-container">
-        <header>
-          <Navigation authUser={authUser} signOut={onSignOut} />
-        </header>
+      <Container>
+        <Navigation authUser={authUser} signOut={onSignOut} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/threads/:id" element={<DetailPage />} />
           <Route path="/leaderboards" element={<LeaderboardsPage />} />
         </Routes>
-        <footer>
-          <Footer />
-        </footer>
-      </div>
+        <Footer />
+      </Container>
     </>
   );
 }

@@ -3,6 +3,7 @@
 /* eslint-disable quotes */
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { InputContainer, TitleLabel, InputTitle, CountdownTitle, ContentLabel, InputContentThread, CountdownContent, InputButton } from "./styled/ThreadInput";
 
 function ThreadInput({ addThread }) {
   const [title, setTitle] = useState("");
@@ -31,25 +32,24 @@ function ThreadInput({ addThread }) {
 
   return (
     <form>
-      <div className="thread-input">
-        <div className="input-container">
-          <label htmlFor="title">Title</label>
-          <input className="title" type="text" placeholder="Thread Title" value={title} onChange={handleTitleChange} />
-          <p className="thread-input__title">
-            <strong>{title.length}</strong>
-            /50
-          </p>
-          <label htmlFor="body">Body</label>
-          <textarea className="body" type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
-        </div>
-        <p className="thread-input__body">
+      <InputContainer>
+        {" "}
+        <TitleLabel htmlFor="title">Title</TitleLabel>
+        <InputTitle type="text" placeholder="Thread Title" value={title} onChange={handleTitleChange} />
+        <CountdownTitle>
+          <strong>{title.length}</strong>
+          /50
+        </CountdownTitle>
+        <ContentLabel htmlFor="body">Body</ContentLabel>
+        <InputContentThread type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
+        <CountdownContent>
           <strong>{text.length}</strong>
           /320
-        </p>
-        <button type="submit" onClick={addthread}>
-          Thread
-        </button>
-      </div>
+        </CountdownContent>
+      </InputContainer>
+      <InputButton type="submit" onClick={addthread}>
+        Thread
+      </InputButton>
     </form>
   );
 }

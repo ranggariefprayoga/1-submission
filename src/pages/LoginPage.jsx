@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import LoginInput from "../component/LoginInput";
 import { asyncSetAuthUser } from "../states/authUser/action";
+import { LoginPageContainer, LoginInputContainer, Title, styles, Question } from "./styled/LoginPage";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -17,18 +18,18 @@ function LoginPage() {
   };
 
   return (
-    <section className="login-page">
-      <article className="login-page_input">
-        <h2>Login, Now!</h2>
+    <LoginPageContainer>
+      <LoginInputContainer>
+        <Title>Login, Now!</Title>
         <LoginInput login={onLogin} />
-        <p>
+        <Question>
           Don`t have an account?{" "}
-          <Link to="/register" className="to-register">
+          <Link to="/register" style={styles.menuStyle}>
             Register
           </Link>
-        </p>
-      </article>
-    </section>
+        </Question>
+      </LoginInputContainer>
+    </LoginPageContainer>
   );
 }
 
