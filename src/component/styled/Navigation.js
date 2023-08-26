@@ -1,5 +1,10 @@
-import styled from 'styled-components';
-import { devices } from './breakpoints';
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable object-curly-newline */
+/* eslint-disable quotes */
+/* eslint-disable linebreak-style */
+import styled from "styled-components";
+import { devices } from "./breakpoints";
 
 const NavigationContainer = styled.div`
   display: grid;
@@ -48,6 +53,10 @@ const LinkContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     position: relative;
   }
+
+  @media only screen and ${devices.xs} {
+    grid-template-columns: 1fr 2fr;
+  }
 `;
 
 const IconToggle = styled.div`
@@ -68,31 +77,6 @@ const IconToggle = styled.div`
     color: #ff4500;
   }
 `;
-
-// const To = styled.nav`
-//   display: flex;
-//   align-items: center;
-//   justify-content: flex-end;
-//   margin-right: 12px;
-//   gap: 16px;
-
-//   @media only screen and ${devices.md} {
-//     display: flex;
-//     position: fixed;
-//     top: 80px;
-//     right: 0;
-//     transform: translateX(120%);
-//     width: 100%;
-//     height: 50%;
-//     background-color: white;
-//     flex-direction: column;
-//     justify-content: space-evenly;
-//     align-items: center;
-//     transition: 0.3s ease-in-out;
-//     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-//     border-radius: 3px;
-//   }
-// `;
 
 const SignOutButton = styled.button`
   background-color: #ff9900;
@@ -122,8 +106,6 @@ const SignOutButton = styled.button`
   }
 `;
 
-const style = { display: 'block', height: '44px', width: '44px' };
+const style = { display: "block", height: "44px", width: "44px" };
 
-export {
-  NavigationContainer, UserInfo, Image, Name, LinkContainer, IconToggle, style, SignOutButton,
-};
+export { NavigationContainer, UserInfo, Image, Name, LinkContainer, IconToggle, style, SignOutButton };
