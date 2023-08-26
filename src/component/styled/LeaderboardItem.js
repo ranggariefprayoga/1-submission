@@ -33,7 +33,11 @@ const LeaderboardItemImage = styled.img`
 
 const LeaderboardUserInfoContainer = styled.div`
   @media only screen and ${devices.sm} {
+    display: flex;
     margin: 0 auto;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
   }
 `;
 
