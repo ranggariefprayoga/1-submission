@@ -48,14 +48,14 @@ const LinkContainer = styled.div`
   position: relative;
   margin-right: 8px;
 
-  @media only screen and ${devices.md} {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-  }
-
   @media only screen and ${devices.xs} {
     grid-template-columns: 1fr 2fr;
+  }
+
+  @media only screen and ${devices.md} {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
   }
 `;
 
