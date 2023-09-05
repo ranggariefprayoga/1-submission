@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const LoginPageContainer = styled.section`
-  background-image: url(../../public/background.jpg);
+  background-image: url(/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -29,16 +29,14 @@ const Question = styled.p`
 
 const styles = {
   menuStyle: {
-    textDecoration: 'none',
-    color: 'pink',
-    fontWeight: 'bold',
-    transition: 'color 0.3s',
-    '&:hover': {
-      color: '#ff9900',
+    textDecoration: "none",
+    color: "pink",
+    fontWeight: "bold",
+    transition: "color 0.3s",
+    "&:hover": {
+      color: "#ff9900",
     },
   },
 };
 
-export {
-  LoginPageContainer, LoginInputContainer, Title, styles, Question,
-};
+export { LoginPageContainer, LoginInputContainer, Title, styles, Question };
