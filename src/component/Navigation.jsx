@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable object-curly-newline */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -7,7 +8,7 @@ import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
-import { NavigationContainer, UserInfo, Image, Name, LinkContainer, IconToggle, style, SignOutButton } from "./styled/Navigation";
+import { NavigationContainer, UserInfo, Name, Image, LinkContainer, IconToggle, style, SignOutButton } from "./styled/Navigation";
 
 function useOutsideAlerter(ref) {
   useEffect(() => {
@@ -55,7 +56,7 @@ function Navigation({ authUser, signOut }) {
       {" "}
       <UserInfo>
         <Image src={avatar} alt={id} title={name} />
-        <Name>{name}</Name>
+        <Name>Hi, {name.charAt(0)}!</Name>
       </UserInfo>
       <LinkContainer ref={wrapperRef}>
         <IconToggle onClick={toggleMenu}>

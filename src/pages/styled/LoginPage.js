@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable quotes */
 import styled from "styled-components";
 
 const LoginPageContainer = styled.section`
