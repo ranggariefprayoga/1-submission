@@ -57,7 +57,7 @@
     right: 0;
     transform: translateX(120%);
     width: 40%;
-    height: 20%;
+    height: 100px;
     background-color: white;
     flex-direction: column;
     transition: 0.3s ease-in-out;
